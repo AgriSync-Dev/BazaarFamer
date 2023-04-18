@@ -5,7 +5,6 @@ import 'package:pirate_hunt/screens/signup_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginScreen extends StatefulWidget {
-  
   static const routeName = '/login-screen';
   const LoginScreen({super.key});
 
@@ -21,6 +20,13 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController passwordController = new TextEditingController();
 
   final _auth = FirebaseAuth.instance;
+
+  @override
+  void dispose() {
+    super.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -144,7 +150,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           const Text("Don't have an Account ? "),
                           GestureDetector(
                             onTap: () {
-                              Navigator.push(
+                              Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
@@ -178,9 +184,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 Fluttertoast.showToast(msg: "Login Successful"),
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
-                    builder: (ctx) => HomeScreen(),
+                    builder: (ctx) => const HomeScreen(),
                   ),
-                )
+                ),
               })
           .catchError((e) {
         Fluttertoast.showToast(msg: e!.msg);

@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:pirate_hunt/model/user_model.dart';
 import 'package:pirate_hunt/screens/home_screen.dart';
+import 'package:pirate_hunt/screens/login_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
-  
   static const routeName = '/signup-screen';
   const SignUpScreen({super.key});
 
@@ -24,11 +24,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
 
-
-  final _auth =  FirebaseAuth.instance; 
+  final _auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
-
     final userNameField = TextFormField(
       autofocus: false,
       controller: userNameController,
@@ -125,7 +123,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       //   }
       //   return null;
       // },
-      
+
       onSaved: (val) {
         confirmPasswordController.text = val!;
       },
@@ -166,12 +164,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          icon: const Icon(Icons.arrow_back,color: Colors.red,),
-        ),
       ),
       backgroundColor: Colors.white,
       body: Center(
@@ -213,6 +205,32 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         height: 25,
                       ),
                       signUpButton,
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text("Already have an account ? "),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const LoginScreen()));
+                            },
+                            child: const Text(
+                              "Login",
+                              style: TextStyle(
+                                color: Colors.redAccent,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 15,
+                              ),
+                            ),
+                          )
+                        ],
+                      )
                     ],
                   )),
             ),
@@ -222,19 +240,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
-
   Future<void> signUp(String email, String password) async {
-    if(_formKey.currentState!.validate()){
-      await _auth.createUserWithEmailAndPassword(email: email, password: password)
-      .then((value) => {
-        postDetailsToFirestore(),
-      }).catchError((e){
+    if (_formKey.currentState!.validate()) {
+      await _auth
+          .createUserWithEmailAndPassword(email: email, password: password)
+          .then((value) => {
+                postDetailsToFirestore(),
+              })
+          .catchError((e) {
         Fluttertoast.showToast(msg: e!.msg);
       });
     }
   }
 
-  postDetailsToFirestore( ) async {
+  postDetailsToFirestore() async {
     FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
 
     User? user = _auth.currentUser;
@@ -242,13 +261,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
     UserModel userModel = UserModel();
 
     userModel.email = user!.email;
-    userModel.uid = user.uid ;
+    userModel.uid = user.uid;
     userModel.userName = userNameController.text;
 
-    await firebaseFirestore.collection("users").doc(user.uid)
-    .set(userModel.toMap());
+    await firebaseFirestore
+        .collection("users")
+        .doc(user.uid)
+        .set(userModel.toMap());
 
     Fluttertoast.showToast(msg: "Account created successfully!");
-    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (ctx)=>  const HomeScreen()), (route) => false);
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (ctx) => const HomeScreen(),
+      ),
+    );
   }
 }
