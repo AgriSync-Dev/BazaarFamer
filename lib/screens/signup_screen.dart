@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:pirate_hunt/model/user_model.dart';
 import 'package:pirate_hunt/screens/home/home_screen.dart';
-import 'package:pirate_hunt/screens/home_screen.dart';
 import 'package:pirate_hunt/screens/login_screen.dart';
 
 class SignUpScreen extends StatefulWidget {

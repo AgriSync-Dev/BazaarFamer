@@ -9,7 +9,6 @@ import 'package:provider/provider.dart';
 
 import 'constants.dart';
 import 'screens/drop_screen.dart';
-import 'screens/home_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -59,7 +58,7 @@ class MyApp extends StatelessWidget {
         routes: {
           LoginScreen.routeName: (context) => const LoginScreen(),
           SignUpScreen.routeName:(context) => const SignUpScreen(),
-          HomeScreen.routeName: (context) => const HomeScreen(),
+          // HomeScreen.routeName: (context) => const HomeScreen(),
           SecondHomeScreen.routeName:(context) => const SecondHomeScreen(),
           DropScreen.routeName: (context) => const DropScreen(),
         },

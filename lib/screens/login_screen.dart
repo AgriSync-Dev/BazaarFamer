@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:pirate_hunt/screens/home/home_screen.dart';
-import 'package:pirate_hunt/screens/home_screen.dart';
 import 'package:pirate_hunt/screens/signup_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 

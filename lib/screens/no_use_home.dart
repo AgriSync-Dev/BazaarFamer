@@ -5,15 +5,15 @@ import 'package:pirate_hunt/model/user_model.dart';
 import 'package:pirate_hunt/screens/home/home_screen.dart';
 import 'package:pirate_hunt/screens/login_screen.dart';
 
-class HomeScreen extends StatefulWidget {
+class NoHomeScreen extends StatefulWidget {
   static const routeName = '/home-screen';
-  const HomeScreen({super.key});
+  const NoHomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<NoHomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<NoHomeScreen> {
   User? user = FirebaseAuth.instance.currentUser;
   UserModel loggedInUser = UserModel();
 

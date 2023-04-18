@@ -14,9 +14,40 @@ import 'components/search_form.dart';
 import '/screens/cart/components/badge.dart';
 import 'components/section_title.dart';
 
-class SecondHomeScreen extends StatelessWidget {
+class SecondHomeScreen extends StatefulWidget {
   static const routeName = '/home';
   const SecondHomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<SecondHomeScreen> createState() => _SecondHomeScreenState();
+}
+
+class _SecondHomeScreenState extends State<SecondHomeScreen> {
+  int _page = 0;
+  late PageController pageController;
+
+  @override
+  void initState() {
+    super.initState();
+    pageController = PageController();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    pageController.dispose();
+  }
+
+  void navigationTap(int page) {
+    pageController.jumpToPage(page);
+  }
+
+  void pageChanged(int page) {
+    setState(() {
+      _page = page;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final data = Provider.of<Cart>(context);
@@ -43,34 +74,70 @@ class SecondHomeScreen extends StatelessWidget {
         //   Badge(child: IconButton(onPressed: (){}, icon: Icon(Icons.shopping_cart, color: Colors.grey,)), value: data.itemCount.toString(), color: primaryColor),
         // ],
       ),
-      body: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(
-            parent: AlwaysScrollableScrollPhysics()),
-        padding: const EdgeInsets.all(defaultPadding),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Explore",
-              style: Theme.of(context)
-                  .textTheme
-                  .headline4!
-                  .copyWith(fontWeight: FontWeight.w500, color: Colors.black),
+      body: PageView(
+        controller: pageController,
+        onPageChanged: pageChanged,
+        physics: const NeverScrollableScrollPhysics(),
+        children: [
+          SingleChildScrollView(
+            physics: const BouncingScrollPhysics(
+                parent: AlwaysScrollableScrollPhysics()),
+            padding: const EdgeInsets.all(defaultPadding),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Explore",
+                  style: Theme.of(context).textTheme.headline4!.copyWith(
+                      fontWeight: FontWeight.w500, color: Colors.black),
+                ),
+                const Text(
+                  "best Products for you",
+                  style: TextStyle(fontSize: 18),
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: defaultPadding),
+                  child: SearchForm(),
+                ),
+                SectionTitle(title: 'Categories', pressSeeAll: () {}),
+                const Categories(),
+                const NewArrivalProducts(),
+                const PopularProducts(),
+              ],
             ),
-            const Text(
-              "best Products for you",
-              style: TextStyle(fontSize: 18),
+          ),
+          Center(child: Text('Orders')),
+          Center(child: Text('Profile'),),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.red,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+              color: _page == 0 ? primaryColor : secondaryColor,
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: defaultPadding),
-              child: SearchForm(),
+            label: '',
+          ),
+          
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.shopping_bag,
+              color: _page == 2 ? primaryColor : secondaryColor,
             ),
-            SectionTitle(title: 'Categories', pressSeeAll: () {}),
-            const Categories(),
-            const NewArrivalProducts(),
-            const PopularProducts(),
-          ],
-        ),
+            label: '',
+          ),
+         
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person,
+              color: _page == 4 ? primaryColor : secondaryColor,
+            ),
+            label: '',
+          ),
+        ],
+        onTap: navigationTap,
       ),
     );
   }
