@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pirate_hunt/constants.dart';
+import 'package:pirate_hunt/screens/myproducts/my_products.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -22,33 +23,33 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Container(
                 width: 100,
                 height: 100,
-                child: CircleAvatar(
+                child: const CircleAvatar(
                   child: Icon(
                     Icons.person,
                     size: 80,
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Text(
+              const Text(
                 'Amartya Yadav',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Text(
+              const Text(
                 'iamartyaa@gmail.com',
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               Row(
@@ -63,7 +64,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
@@ -84,7 +85,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
@@ -105,7 +106,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
@@ -126,7 +127,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
@@ -146,6 +147,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ),
                 ],
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (ctx) => const MyProductScreen(),
+                    ),
+                  );
+                },
+                child: const Text(
+                  'My Products',
+                  style: TextStyle(fontSize: 18),
+                ),
               ),
             ],
           ),
