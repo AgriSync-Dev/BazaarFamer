@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../details/details_screen.dart';
 import '/models/Product.dart';
 // import '/screens/details/details_screen.dart';
 
@@ -37,13 +38,13 @@ class NewArrivalProducts extends StatelessWidget {
                   price: demo_product[index].price,
                   bgColor: demo_product[index].bgColor,
                   press: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) =>
-                    //         DetailsScreen(product: demo_product[index]),
-                    //   ),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            DetailsScreen(product: demo_product[index]),
+                      ),
+                    );
                   },
                 ),
               ),
