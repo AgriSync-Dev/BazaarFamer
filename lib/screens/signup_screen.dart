@@ -267,7 +267,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     userModel.pno = '7007144430';
 
     await firebaseFirestore
-        .collection("users")
+        .collection("nusers")
         .doc(user.uid)
         .set(userModel.toMap());
 
