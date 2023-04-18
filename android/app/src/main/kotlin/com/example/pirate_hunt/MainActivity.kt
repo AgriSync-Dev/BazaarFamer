@@ -1,4 +1,4 @@
-package com.example.farmer_bazaar
+package com.example.pirate_hunt
 
 import io.flutter.embedding.android.FlutterActivity
 
