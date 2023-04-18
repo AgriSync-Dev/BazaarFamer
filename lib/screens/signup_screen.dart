@@ -263,9 +263,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
     userModel.email = user!.email;
     userModel.uid = user.uid;
     userModel.userName = userNameController.text;
+    userModel.address = 'Kanpur, Uttar Pradesh';
+    userModel.pno = '7007144430';
 
     await firebaseFirestore
-        .collection("users")
+        .collection("nusers")
         .doc(user.uid)
         .set(userModel.toMap());
 

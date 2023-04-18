@@ -1,8 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pirate_hunt/constants.dart';
+import 'package:pirate_hunt/model/user_model.dart';
 import 'package:pirate_hunt/screens/login_screen.dart';
-import 'package:pirate_hunt/screens/myproducts/my_products.dart';
+// import 'package:pirate_hunt/screens/myproducts/my_products.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -12,10 +14,29 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  User? user = FirebaseAuth.instance.currentUser;
+  UserModel loggedInUser = UserModel();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    FirebaseFirestore.instance
+        .collection("nusers")
+        .doc(user!.uid)
+        .get()
+        .then((value) {
+      loggedInUser = UserModel.fromMap(value.data());
+      setState(() {});
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         centerTitle: true,
         title: const Text('My Profile'),
       ),
@@ -40,9 +61,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                const Text(
-                  'Amartya Yadav',
-                  style: TextStyle(
+                Text(
+                  '${loggedInUser.userName}',
+                  style: const TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
@@ -50,9 +71,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 const SizedBox(
                   height: 10,
                 ),
-                const Text(
-                  'iamartyaa@gmail.com',
-                  style: TextStyle(
+                Text(
+                  '${loggedInUser.email}',
+                  style: const TextStyle(
                     fontSize: 16,
                   ),
                 ),
@@ -76,8 +97,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text(
+                  children: [
+                    const Text(
                       'Name',
                       style: TextStyle(
                         fontSize: 16,
@@ -85,8 +106,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                     Text(
-                      'Amartya Yadav',
-                      style: TextStyle(
+                      '${loggedInUser.userName}',
+                      style: const TextStyle(
                         fontSize: 16,
                       ),
                     ),
@@ -97,8 +118,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text(
+                  children: [
+                    const Text(
                       'Email',
                       style: TextStyle(
                         fontSize: 16,
@@ -106,8 +127,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                     Text(
-                      'iamartyaa@gmail.com',
-                      style: TextStyle(
+                      '${loggedInUser.email}',
+                      style: const TextStyle(
                         fontSize: 16,
                       ),
                     ),
@@ -139,8 +160,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text(
+                  children: [
+                    const Text(
                       'Phone No',
                       style: TextStyle(
                         fontSize: 16,
@@ -148,8 +169,29 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                     Text(
-                      '+91-9999999999',
+                      '${loggedInUser.pno}',
+                      style: const TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Address',
                       style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      '${loggedInUser.address}',
+                      style: const TextStyle(
                         fontSize: 16,
                       ),
                     ),

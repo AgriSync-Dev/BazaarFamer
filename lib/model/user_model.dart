@@ -4,14 +4,18 @@ class UserModel {
   String? uid;
   String? email;
   String? userName;
+  String? pno="N/A";
+  String? address = "N/A";
 
-  UserModel({this.uid, this.email, this.userName});
+  UserModel({this.uid, this.email, this.userName, this.pno,this.address});
 
   factory UserModel.fromMap(map) {
     return UserModel(
       uid: map['uid'],
       email: map['email'],
       userName: map['userName'],
+      pno: map['pno'],
+      address: map['address'],
     );
   }
 
@@ -20,6 +24,8 @@ class UserModel {
       'uid': uid,
       'email': email,
       'userName': userName,
+      'pno': pno,
+      'address': address,
     };
   }
 }

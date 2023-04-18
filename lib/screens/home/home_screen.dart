@@ -1,7 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pirate_hunt/screens/cart/cart_screen.dart';
-import 'package:pirate_hunt/screens/login_screen.dart';
 import 'package:pirate_hunt/screens/myproducts/my_products.dart';
 import 'package:pirate_hunt/screens/orders/orders_screen.dart';
 import 'package:pirate_hunt/screens/profile/profile_screen.dart';
@@ -55,6 +53,7 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
     return Scaffold(
       appBar: AppBar(
         // centerTitle: true,
+        elevation: 0,
         title: const Text(
           "Farmer's Market",
           style: TextStyle(color: Colors.white),
@@ -105,10 +104,10 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
                   "best Products for you",
                   style: TextStyle(fontSize: 18),
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: defaultPadding),
-                  child: SearchForm(),
-                ),
+                // const Padding(
+                //   padding: EdgeInsets.symmetric(vertical: defaultPadding),
+                //   child: SearchForm(),
+                // ),
                 SectionTitle(title: 'Categories', pressSeeAll: () {}),
                 const Categories(),
                 const NewArrivalProducts(),
@@ -163,6 +162,4 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
       ),
     );
   }
-
-  
 }
