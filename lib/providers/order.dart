@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './cart.dart';
-import 'package:http/http.dart' as http;
+//import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 import 'package:pirate_hunt/providers/cart.dart';
