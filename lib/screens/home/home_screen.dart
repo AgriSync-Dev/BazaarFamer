@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:pirate_hunt/screens/cart/cart_screen.dart';
 import 'package:pirate_hunt/screens/login_screen.dart';
 import 'package:pirate_hunt/screens/orders/orders_screen.dart';
+import 'package:pirate_hunt/screens/profile/profile_screen.dart';
 import 'package:provider/provider.dart';
 
 // import '/screens/cart/cart_screen.dart';
@@ -118,12 +119,10 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
             ),
           ),
           // const Center(
-          //   child: Text('Products'),
+          //   child: Text('Your Products'),
           // ),
           const OrdersScreen(),
-          const Center(
-            child: Text('Profile'),
-          ),
+          const ProfileScreen(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
