@@ -53,6 +53,7 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
     return Scaffold(
       appBar: AppBar(
         // centerTitle: true,
+        elevation: 0,
         title: const Text(
           "Farmer's Market",
           style: TextStyle(color: Colors.white),
@@ -103,10 +104,10 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
                   "best Products for you",
                   style: TextStyle(fontSize: 18),
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: defaultPadding),
-                  child: SearchForm(),
-                ),
+                // const Padding(
+                //   padding: EdgeInsets.symmetric(vertical: defaultPadding),
+                //   child: SearchForm(),
+                // ),
                 SectionTitle(title: 'Categories', pressSeeAll: () {}),
                 const Categories(),
                 const NewArrivalProducts(),

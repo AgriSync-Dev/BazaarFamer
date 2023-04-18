@@ -87,6 +87,7 @@ class CartScreen extends StatelessWidget {
                     OutlinedButton(
                       onPressed: () {
                         Provider.of<Orders>(context,listen: false).addOrder(myOrders, cartData.totalAmount);
+                        Provider.of<Cart>(context,listen: false).emptyCart();
                         Navigator.of(context).pushReplacementNamed(SecondHomeScreen.routeName);
                       },
                       child: const Text(
