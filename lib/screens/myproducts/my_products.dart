@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pirate_hunt/models/Product.dart';
+import 'package:pirate_hunt/screens/myproducts/add_product.dart';
 
 import '../details/details_screen.dart';
 import '../home/components/product_card.dart';
@@ -54,6 +55,17 @@ class _MyProductScreenState extends State<MyProductScreen> {
             },
           );
         },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const AddProduct(),
+            ),
+          );
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }

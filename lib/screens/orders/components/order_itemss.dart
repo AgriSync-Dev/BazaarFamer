@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+//import 'package:intl/intl.dart';
 import '../../../providers/order.dart';
 
 class OrderItemss extends StatefulWidget {
@@ -18,11 +18,11 @@ class _OrderItemState extends State<OrderItemss> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      
       padding: const EdgeInsets.all(8.0),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
-        height: expanded ? min(widget.order.products.length * 20 + 90, 200) : 75,
+        height:
+            expanded ? min(widget.order.products.length * 20 + 90, 200) : 75,
         child: Card(
           elevation: 0,
           color: Colors.blue[100],
@@ -32,8 +32,8 @@ class _OrderItemState extends State<OrderItemss> {
               ListTile(
                 title: Text('Order amount: ${widget.order.amount}'),
                 subtitle: Text(
-                  DateFormat('dd/MM/yyyy - hh:mm').format(widget.order.dateTime),
-                ),
+                    '' //                DateFormat('dd/MM/yyyy - hh:mm').format(widget.order.dateTime),
+                    ),
                 trailing: IconButton(
                   icon: Icon(!expanded ? Icons.expand_more : Icons.expand_less),
                   onPressed: () {
