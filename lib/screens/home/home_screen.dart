@@ -1,7 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pirate_hunt/screens/cart/cart_screen.dart';
-import 'package:pirate_hunt/screens/login_screen.dart';
 import 'package:pirate_hunt/screens/myproducts/my_products.dart';
 import 'package:pirate_hunt/screens/orders/orders_screen.dart';
 import 'package:pirate_hunt/screens/profile/profile_screen.dart';
@@ -163,6 +161,4 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
       ),
     );
   }
-
-  
 }
