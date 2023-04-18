@@ -16,21 +16,21 @@ class _MyProductScreenState extends State<MyProductScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       //backgroundColor: widget.product.bgColor,
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('My Products'),
-        actions: [
-          IconButton(
-            icon: const Icon(
-              Icons.add_box,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              //add new products...........................
-            },
-          ),
-        ],
-      ),
+      // appBar: AppBar(
+      //   centerTitle: true,
+      //   title: const Text('My Products'),
+      //   actions: [
+      //     IconButton(
+      //       icon: const Icon(
+      //         Icons.add_box,
+      //         color: Colors.white,
+      //       ),
+      //       onPressed: () {
+      //         //add new products...........................
+      //       },
+      //     ),
+      //   ],
+      // ),
       body: GridView.builder(
         itemCount: demo_product.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

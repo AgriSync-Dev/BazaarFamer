@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pirate_hunt/screens/cart/cart_screen.dart';
 import 'package:pirate_hunt/screens/login_screen.dart';
+import 'package:pirate_hunt/screens/myproducts/my_products.dart';
 import 'package:pirate_hunt/screens/orders/orders_screen.dart';
 import 'package:pirate_hunt/screens/profile/profile_screen.dart';
 import 'package:provider/provider.dart';
@@ -76,6 +77,19 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
         ),
         actions: [
           IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (ctx) => const ProfileScreen(),
+                ),
+              );
+            },
+            icon: const Icon(
+              Icons.person,
+              color: Colors.white,
+            ),
+          ),
+          IconButton(
             icon: const Icon(
               Icons.shopping_cart,
               color: Colors.white,
@@ -122,7 +136,7 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
           //   child: Text('Your Products'),
           // ),
           const OrdersScreen(),
-          const ProfileScreen(),
+          const MyProductScreen(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -153,10 +167,10 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.person,
+              Icons.inventory_2_sharp,
               color: _page == 2 ? Colors.white : Colors.white54,
             ),
-            label: 'Profile',
+            label: 'Products',
           ),
         ],
         onTap: navigationTap,
