@@ -25,7 +25,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
     return Scaffold(
       backgroundColor: widget.product.bgColor,
       appBar: AppBar(
-        leading: const BackButton(color: Colors.black),
+        leading: const BackButton(color: Colors.white),
         // actions: [
         //   IconButton(
         //     onPressed: () {},
@@ -42,7 +42,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
           IconButton(
             icon: const Icon(
               Icons.shopping_cart,
-              color: Colors.grey,
+              color: Colors.white,
             ),
             onPressed: () {
               Navigator.of(context).pushNamed(CartScreen.routeName);
