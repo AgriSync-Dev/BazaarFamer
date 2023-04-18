@@ -54,26 +54,10 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
     final data = Provider.of<Cart>(context);
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            logout(context);
-          },
-          icon: const Icon(Icons.logout),
-          //SvgPicture.asset("assets/icons/menu.svg"),
-        ),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Icon(
-              Icons.location_pin,
-              color: Colors.white,
-            ),
-            SizedBox(width: defaultPadding / 2),
-            Text(
-              "Farmer's Market",
-              style: TextStyle(color: Colors.white),
-            ),
-          ],
+        // centerTitle: true,
+        title: const Text(
+          "Farmer's Market",
+          style: TextStyle(color: Colors.white),
         ),
         actions: [
           IconButton(
@@ -139,7 +123,6 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
           const OrdersScreen(),
 
           const MyProductScreen(),
-
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -181,13 +164,5 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
     );
   }
 
-  Future<void> logout(BuildContext context) async {
-    // await FirebaseAuth.instance.signOut();
-    await FirebaseAuth.instance.signOut();
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(
-        builder: (ctx) => const LoginScreen(),
-      ),
-    );
-  }
+  
 }

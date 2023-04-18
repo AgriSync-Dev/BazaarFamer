@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pirate_hunt/constants.dart';
+import 'package:pirate_hunt/screens/login_screen.dart';
 import 'package:pirate_hunt/screens/myproducts/my_products.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -153,26 +155,29 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ],
                 ),
-                // const SizedBox(
-                //   height: 30,
-                // ),
-                // ElevatedButton(
-                //   onPressed: () {
-                //     Navigator.of(context).push(
-                //       MaterialPageRoute(
-                //         builder: (ctx) => const MyProductScreen(),
-                //       ),
-                //     );
-                //   },
-                //   child: const Text(
-                //     'My Products',
-                //     style: TextStyle(fontSize: 18),
-                //   ),
-                // ),
+                const SizedBox(
+                  height: 25,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    logout(context);
+                  },
+                  child: const Text('LogOut'),
+                ),
               ],
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Future<void> logout(BuildContext context) async {
+    // await FirebaseAuth.instance.signOut();
+    await FirebaseAuth.instance.signOut();
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (ctx) => const LoginScreen(),
       ),
     );
   }
