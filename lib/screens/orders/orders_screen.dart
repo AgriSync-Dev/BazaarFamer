@@ -14,14 +14,28 @@ class OrdersScreen extends StatelessWidget {
     List<OrderItem> myOrders = ordersData.orders;
 
     return Column(
+      mainAxisAlignment:
+          myOrders.isEmpty ? MainAxisAlignment.center : MainAxisAlignment.start,
       children: [
-        const Padding(
-          padding: EdgeInsets.all(5.0),
-          child: Text(
-            'My Orders',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        if (myOrders.isNotEmpty)
+          const Padding(
+            padding: EdgeInsets.all(5.0),
+            child: Text(
+              'My Orders',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
           ),
-        ),
+        if (myOrders.isEmpty)
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Center(
+              child: Icon(Icons.hourglass_empty_rounded,size: 30,),
+            ),
+          ),
+        if (myOrders.isEmpty)
+          const Center(
+            child: Text('No Orders placed yet!'),
+          ),
         for (var item in myOrders) OrderItemss(order: item),
       ],
     );

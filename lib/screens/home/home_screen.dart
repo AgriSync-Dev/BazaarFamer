@@ -10,7 +10,7 @@ import '/constants.dart';
 import '/providers/cart.dart';
 import 'components/categories.dart';
 import 'components/new_arrival_products.dart';
-import 'components/search_form.dart';
+// import 'components/search_form.dart';
 import 'components/section_title.dart';
 
 class SecondHomeScreen extends StatefulWidget {

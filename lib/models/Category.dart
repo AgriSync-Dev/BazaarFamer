@@ -7,18 +7,18 @@ class Category {
 List<Category> demo_categories = [
   Category(
     icon: "assets/icons/dress.svg",
-    title: "Dress",
+    title: "Vegetables",
   ),
   Category(
     icon: "assets/icons/shirt.svg",
-    title: "Shirt",
+    title: "Fruits",
   ),
   Category(
     icon: "assets/icons/pants.svg",
-    title: "Pants",
+    title: "Grains",
   ),
   Category(
     icon: "assets/icons/Tshirt.svg",
-    title: "Tshirt",
+    title: "Others",
   ),
 ];
