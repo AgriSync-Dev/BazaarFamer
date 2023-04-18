@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pirate_hunt/screens/login_screen.dart';
 import 'package:provider/provider.dart';
 
 // import '/screens/cart/cart_screen.dart';
@@ -13,7 +15,6 @@ import '/screens/cart/components/badge.dart';
 import 'components/section_title.dart';
 
 class SecondHomeScreen extends StatelessWidget {
-  
   static const routeName = '/home';
   const SecondHomeScreen({Key? key}) : super(key: key);
   @override
@@ -22,7 +23,9 @@ class SecondHomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            logout(context);
+          },
           icon: SvgPicture.asset("assets/icons/menu.svg"),
         ),
         title: Row(
@@ -55,7 +58,7 @@ class SecondHomeScreen extends StatelessWidget {
                   .copyWith(fontWeight: FontWeight.w500, color: Colors.black),
             ),
             const Text(
-              "best Outfits for you",
+              "best Products for you",
               style: TextStyle(fontSize: 18),
             ),
             const Padding(
@@ -68,6 +71,16 @@ class SecondHomeScreen extends StatelessWidget {
             const PopularProducts(),
           ],
         ),
+      ),
+    );
+  }
+
+  Future<void> logout(BuildContext context) async {
+    // await FirebaseAuth.instance.signOut();
+    await FirebaseAuth.instance.signOut();
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (ctx) => const LoginScreen(),
       ),
     );
   }

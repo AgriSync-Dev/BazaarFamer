@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:pirate_hunt/model/user_model.dart';
+import 'package:pirate_hunt/screens/home/home_screen.dart';
 import 'package:pirate_hunt/screens/home_screen.dart';
 import 'package:pirate_hunt/screens/login_screen.dart';
 
@@ -270,10 +271,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
         .set(userModel.toMap());
 
     Fluttertoast.showToast(msg: "Account created successfully!");
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(
-        builder: (ctx) => const HomeScreen(),
-      ),
-    );
+    Navigator.of(context).pushReplacementNamed(SecondHomeScreen.routeName);
   }
 }

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:pirate_hunt/screens/home/home_screen.dart';
 import 'package:pirate_hunt/screens/home_screen.dart';
 import 'package:pirate_hunt/screens/signup_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginScreen extends StatefulWidget {
+  
   static const routeName = '/login-screen';
   const LoginScreen({super.key});
 
@@ -30,6 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    
     final emailField = TextFormField(
       autofocus: false,
       controller: emailController,
@@ -150,11 +153,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           const Text("Don't have an Account ? "),
                           GestureDetector(
                             onTap: () {
-                              Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const SignUpScreen()));
+                              Navigator.of(context).pushReplacementNamed(SecondHomeScreen.routeName);
                             },
                             child: const Text(
                               "SignUp",
