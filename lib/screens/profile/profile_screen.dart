@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:pirate_hunt/constants.dart';
 import 'package:pirate_hunt/model/user_model.dart';
 import 'package:pirate_hunt/screens/login_screen.dart';
-import 'package:pirate_hunt/screens/myproducts/my_products.dart';
+// import 'package:pirate_hunt/screens/myproducts/my_products.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -23,7 +23,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     super.initState();
 
     FirebaseFirestore.instance
-        .collection("users")
+        .collection("nusers")
         .doc(user!.uid)
         .get()
         .then((value) {
