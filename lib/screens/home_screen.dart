@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pirate_hunt/model/user_model.dart';
+import 'package:pirate_hunt/screens/home/home_screen.dart';
 import 'package:pirate_hunt/screens/login_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -41,8 +42,10 @@ class _HomeScreenState extends State<HomeScreen> {
           logout(context);
         }, icon: const Icon(Icons.arrow_back)),
       ),
-      body: const Center(
-        child: Text('Home'),
+      body: Center(
+        child: ElevatedButton(onPressed: (){
+          Navigator.of(context).pushReplacementNamed(SecondHomeScreen.routeName);
+        }, child: const Text('Another Home')),
       ),
     );
   }

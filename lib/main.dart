@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pirate_hunt/providers/cart.dart';
+import 'package:pirate_hunt/screens/home/home_screen.dart';
 import 'package:pirate_hunt/screens/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:pirate_hunt/screens/signup_screen.dart';
@@ -48,7 +49,7 @@ class MyApp extends StatelessWidget {
             }
     
             if (userSnapshot.hasData) {
-              return const HomeScreen();
+              return const SecondHomeScreen();
             }
             else {
               return const LoginScreen();
@@ -59,6 +60,7 @@ class MyApp extends StatelessWidget {
           LoginScreen.routeName: (context) => const LoginScreen(),
           SignUpScreen.routeName:(context) => const SignUpScreen(),
           HomeScreen.routeName: (context) => const HomeScreen(),
+          SecondHomeScreen.routeName:(context) => const SecondHomeScreen(),
           DropScreen.routeName: (context) => const DropScreen(),
         },
       ),

@@ -12,8 +12,10 @@ import 'components/search_form.dart';
 import '/screens/cart/components/badge.dart';
 import 'components/section_title.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class SecondHomeScreen extends StatelessWidget {
+  
+  static const routeName = '/home';
+  const SecondHomeScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final data = Provider.of<Cart>(context);
