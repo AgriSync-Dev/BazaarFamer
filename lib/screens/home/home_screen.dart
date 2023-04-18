@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pirate_hunt/screens/cart/cart_screen.dart';
 import 'package:pirate_hunt/screens/login_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -65,14 +66,22 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
             SvgPicture.asset("assets/icons/Location.svg"),
             const SizedBox(width: defaultPadding / 2),
             Text(
-              "Rajendra Nagar, Delhi",
+              "Farmer's Market",
               style: Theme.of(context).textTheme.bodyText1,
             ),
           ],
         ),
-        // actions: [
-        //   Badge(child: IconButton(onPressed: (){}, icon: Icon(Icons.shopping_cart, color: Colors.grey,)), value: data.itemCount.toString(), color: primaryColor),
-        // ],
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.shopping_cart,
+              color: Colors.grey,
+            ),
+            onPressed: () {
+              Navigator.of(context).pushNamed(CartScreen.routeName);
+            },
+          ),
+        ],
       ),
       body: PageView(
         controller: pageController,
@@ -102,14 +111,14 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
                 SectionTitle(title: 'Categories', pressSeeAll: () {}),
                 const Categories(),
                 const NewArrivalProducts(),
-                const PopularProducts(),
+                // const PopularProducts(),
               ],
             ),
           ),
           Center(
             child: Text('Orders'),
           ),
-          Center(
+          const Center(
             child: Text('Profile'),
           ),
         ],

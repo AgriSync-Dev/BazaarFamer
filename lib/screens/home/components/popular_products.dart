@@ -1,5 +1,6 @@
 // import 'package:demouishop/screens/details/details_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:pirate_hunt/screens/details/details_screen.dart';
 import '/models/Product.dart';
 
 import '../../../constants.dart';
@@ -22,14 +23,15 @@ class PopularProducts extends StatelessWidget {
             pressSeeAll: () {},
           ),
         ),
-        SingleChildScrollView(
-          physics: const BouncingScrollPhysics(
-              parent: AlwaysScrollableScrollPhysics()),
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: List.generate(
-              demo_product.length,
-              (index) => Padding(
+        Container(
+          height: 250,
+          child: GridView.builder(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+            ),
+            itemCount: demo_product.length,
+            itemBuilder: (context, index) {
+              return Padding(
                 padding: const EdgeInsets.only(right: defaultPadding),
                 child: ProductCard(
                   title: demo_product[index].title,
@@ -37,17 +39,17 @@ class PopularProducts extends StatelessWidget {
                   price: demo_product[index].price,
                   bgColor: demo_product[index].bgColor,
                   press: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) =>
-                    //         DetailsScreen(product: demo_product[index]),
-                    //   ),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            DetailsScreen(product: demo_product[index]),
+                      ),
+                    );
                   },
                 ),
-              ),
-            ),
+              );
+            },
           ),
         )
       ],

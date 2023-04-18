@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pirate_hunt/providers/cart.dart';
+import 'package:pirate_hunt/screens/cart/cart_screen.dart';
 import 'package:pirate_hunt/screens/home/home_screen.dart';
 import 'package:pirate_hunt/screens/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -59,6 +60,7 @@ class MyApp extends StatelessWidget {
           LoginScreen.routeName: (context) => const LoginScreen(),
           SignUpScreen.routeName:(context) => const SignUpScreen(),
           // HomeScreen.routeName: (context) => const HomeScreen(),
+          CartScreen.routeName:(context) => const CartScreen(),
           SecondHomeScreen.routeName:(context) => const SecondHomeScreen(),
           DropScreen.routeName: (context) => const DropScreen(),
         },
