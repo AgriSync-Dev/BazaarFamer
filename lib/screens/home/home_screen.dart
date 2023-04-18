@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pirate_hunt/screens/cart/cart_screen.dart';
 import 'package:pirate_hunt/screens/login_screen.dart';
+import 'package:pirate_hunt/screens/orders/orders_screen.dart';
 import 'package:provider/provider.dart';
 
 // import '/screens/cart/cart_screen.dart';
@@ -116,9 +117,10 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
               ],
             ),
           ),
-          const Center(
-            child: Text('Orders'),
-          ),
+          // const Center(
+          //   child: Text('Products'),
+          // ),
+          const OrdersScreen(),
           const Center(
             child: Text('Profile'),
           ),
@@ -136,6 +138,13 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
             ),
             label: 'Home',
           ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(
+          //     Icons.shopping_bag_outlined,
+          //     color: _page == 1 ? Colors.white : Colors.white54,
+          //   ),
+          //   label: 'Products',
+          // ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.shopping_bag,
