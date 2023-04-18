@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pirate_hunt/screens/cart/cart_screen.dart';
 import 'package:pirate_hunt/screens/login_screen.dart';
 import 'package:provider/provider.dart';
@@ -10,7 +9,6 @@ import '/constants.dart';
 import '/providers/cart.dart';
 import 'components/categories.dart';
 import 'components/new_arrival_products.dart';
-import 'components/popular_products.dart';
 import 'components/search_form.dart';
 import 'components/section_title.dart';
 
@@ -62,12 +60,15 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
         ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SvgPicture.asset("assets/icons/Location.svg"),
-            const SizedBox(width: defaultPadding / 2),
+          children: const [
+            Icon(
+              Icons.location_pin,
+              color: Colors.white,
+            ),
+            SizedBox(width: defaultPadding / 2),
             Text(
               "Farmer's Market",
-              style: Theme.of(context).textTheme.bodyText1,
+              style: TextStyle(color: Colors.white),
             ),
           ],
         ),
@@ -75,7 +76,7 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
           IconButton(
             icon: const Icon(
               Icons.shopping_cart,
-              color: Colors.grey,
+              color: Colors.white,
             ),
             onPressed: () {
               Navigator.of(context).pushNamed(CartScreen.routeName);
@@ -115,7 +116,7 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
               ],
             ),
           ),
-          Center(
+          const Center(
             child: Text('Orders'),
           ),
           const Center(
@@ -125,27 +126,29 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.blueAccent,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white,
         items: [
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home,
-              color: _page == 0 ? Colors.white : Colors.grey,
+              color: _page == 0 ? Colors.white : Colors.white54,
             ),
-            label: '',
+            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.shopping_bag,
-              color: _page == 1 ? Colors.white : Colors.grey,
+              color: _page == 1 ? Colors.white : Colors.white54,
             ),
-            label: '',
+            label: 'Orders',
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.person,
-              color: _page == 2 ? Colors.white : Colors.grey,
+              color: _page == 2 ? Colors.white : Colors.white54,
             ),
-            label: '',
+            label: 'Profile',
           ),
         ],
         onTap: navigationTap,

@@ -5,7 +5,6 @@ import 'package:pirate_hunt/screens/signup_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginScreen extends StatefulWidget {
-  
   static const routeName = '/login-screen';
   const LoginScreen({super.key});
 
@@ -31,7 +30,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    
     final emailField = TextFormField(
       autofocus: false,
       controller: emailController,
@@ -90,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     final loginButton = Material(
       elevation: 5,
-      color: Colors.red,
+      color: Colors.blueAccent,
       borderRadius: BorderRadius.circular(30),
       child: MaterialButton(
         padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
@@ -152,12 +150,13 @@ class _LoginScreenState extends State<LoginScreen> {
                           const Text("Don't have an Account ? "),
                           GestureDetector(
                             onTap: () {
-                              Navigator.of(context).pushReplacementNamed(SignUpScreen.routeName);
+                              Navigator.of(context)
+                                  .pushReplacementNamed(SignUpScreen.routeName);
                             },
                             child: const Text(
                               "SignUp",
                               style: TextStyle(
-                                color: Colors.redAccent,
+                                color: Colors.blueAccent,
                                 fontWeight: FontWeight.w600,
                                 fontSize: 15,
                               ),
@@ -180,7 +179,8 @@ class _LoginScreenState extends State<LoginScreen> {
           .signInWithEmailAndPassword(email: email, password: password)
           .then((uid) => {
                 Fluttertoast.showToast(msg: "Login Successful"),
-                Navigator.of(context).pushReplacementNamed(SecondHomeScreen.routeName),
+                Navigator.of(context)
+                    .pushReplacementNamed(SecondHomeScreen.routeName),
               })
           .catchError((e) {
         Fluttertoast.showToast(msg: e!.msg);

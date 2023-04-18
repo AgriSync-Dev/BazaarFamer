@@ -140,7 +140,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
     final signUpButton = Material(
       elevation: 5,
-      color: Colors.red,
+      color: Colors.blueAccent,
       borderRadius: BorderRadius.circular(30),
       child: MaterialButton(
         padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
@@ -223,7 +223,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             child: const Text(
                               "Login",
                               style: TextStyle(
-                                color: Colors.redAccent,
+                                color: Colors.blueAccent,
                                 fontWeight: FontWeight.w600,
                                 fontSize: 15,
                               ),

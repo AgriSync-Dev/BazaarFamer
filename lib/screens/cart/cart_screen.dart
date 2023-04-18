@@ -20,11 +20,14 @@ class CartScreen extends StatelessWidget {
     );
     return Scaffold(
       appBar: AppBar(
-        leading: const BackButton(color: Colors.black),
+        leading: const BackButton(color: Colors.white),
         centerTitle: true,
-        title: Text(
+        title: const Text(
           "Shopping Cart",
-          style: Theme.of(context).textTheme.bodyText1,
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+          ),
         ),
       ),
       body: Center(
