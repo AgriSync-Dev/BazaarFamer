@@ -12,7 +12,6 @@ import 'components/categories.dart';
 import 'components/new_arrival_products.dart';
 import 'components/popular_products.dart';
 import 'components/search_form.dart';
-import '/screens/cart/components/badge.dart';
 import 'components/section_title.dart';
 
 class SecondHomeScreen extends StatefulWidget {
@@ -58,7 +57,8 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
           onPressed: () {
             logout(context);
           },
-          icon: SvgPicture.asset("assets/icons/menu.svg"),
+          icon: const Icon(Icons.logout),
+          //SvgPicture.asset("assets/icons/menu.svg"),
         ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -115,33 +115,35 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
               ],
             ),
           ),
-          const Center(child: Text('Orders')),
+          Center(
+            child: Text('Orders'),
+          ),
           const Center(
             child: Text('Profile'),
           ),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.blueAccent,
         items: [
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home,
-              color: _page == 0 ? primaryColor : secondaryColor,
+              color: _page == 0 ? Colors.white : Colors.grey,
             ),
             label: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.shopping_bag,
-              color: _page == 2 ? primaryColor : secondaryColor,
+              color: _page == 1 ? Colors.white : Colors.grey,
             ),
             label: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.person,
-              color: _page == 4 ? primaryColor : secondaryColor,
+              color: _page == 2 ? Colors.white : Colors.grey,
             ),
             label: '',
           ),
