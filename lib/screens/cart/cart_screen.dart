@@ -1,6 +1,8 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:pirate_hunt/providers/order.dart';
+import 'package:pirate_hunt/screens/home/home_screen.dart';
 import 'package:provider/provider.dart';
 
 import '/constants.dart';
@@ -83,9 +85,12 @@ class CartScreen extends StatelessWidget {
                       ),
                     ),
                     OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Provider.of<Orders>(context,listen: false).addOrder(myOrders, cartData.totalAmount);
+                        Navigator.of(context).pushReplacementNamed(SecondHomeScreen.routeName);
+                      },
                       child: const Text(
-                        'Proceed to Payment',
+                        'Place order',
                         style: TextStyle(color: primaryColor),
                       ),
                     ),

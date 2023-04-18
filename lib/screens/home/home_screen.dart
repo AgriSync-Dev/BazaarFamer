@@ -135,8 +135,11 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
           // const Center(
           //   child: Text('Your Products'),
           // ),
+
           const OrdersScreen(),
+
           const MyProductScreen(),
+
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
