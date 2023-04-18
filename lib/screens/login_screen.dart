@@ -153,7 +153,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           const Text("Don't have an Account ? "),
                           GestureDetector(
                             onTap: () {
-                              Navigator.of(context).pushReplacementNamed(SecondHomeScreen.routeName);
+                              Navigator.of(context).pushReplacementNamed(SignUpScreen.routeName);
                             },
                             child: const Text(
                               "SignUp",
@@ -181,11 +181,7 @@ class _LoginScreenState extends State<LoginScreen> {
           .signInWithEmailAndPassword(email: email, password: password)
           .then((uid) => {
                 Fluttertoast.showToast(msg: "Login Successful"),
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (ctx) => const HomeScreen(),
-                  ),
-                ),
+                Navigator.of(context).pushReplacementNamed(SecondHomeScreen.routeName),
               })
           .catchError((e) {
         Fluttertoast.showToast(msg: e!.msg);
