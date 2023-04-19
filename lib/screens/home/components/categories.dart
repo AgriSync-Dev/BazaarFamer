@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import '/models/Category.dart';
 
 import '../../../constants.dart';
@@ -53,9 +52,12 @@ class CategoryCard extends StatelessWidget {
             vertical: defaultPadding / 2, horizontal: defaultPadding / 4),
         child: Column(
           children: [
-            Container(
-              height: 40,
-              child: Image.asset(icon,fit: BoxFit.contain,)),
+            SizedBox(
+                height: 40,
+                child: Image.asset(
+                  icon,
+                  fit: BoxFit.contain,
+                )),
             const SizedBox(height: defaultPadding / 2),
             Text(
               title,

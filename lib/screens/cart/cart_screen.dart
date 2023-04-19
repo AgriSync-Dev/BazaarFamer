@@ -5,7 +5,6 @@ import 'package:pirate_hunt/providers/order.dart';
 import 'package:pirate_hunt/screens/home/home_screen.dart';
 import 'package:provider/provider.dart';
 
-import '/constants.dart';
 import '/screens/cart/components/cart_item.dart';
 import '/providers/cart.dart';
 
@@ -86,10 +85,12 @@ class CartScreen extends StatelessWidget {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        Provider.of<Orders>(context,listen: false).addOrder(myOrders, cartData.totalAmount);
-                        Provider.of<Cart>(context,listen: false).emptyCart();
+                        Provider.of<Orders>(context, listen: false)
+                            .addOrder(myOrders, cartData.totalAmount);
+                        Provider.of<Cart>(context, listen: false).emptyCart();
                         Navigator.of(context).pop();
-                        Navigator.of(context).popAndPushNamed(SecondHomeScreen.routeName);
+                        Navigator.of(context)
+                            .popAndPushNamed(SecondHomeScreen.routeName);
                       },
                       child: const Text(
                         'Place order',

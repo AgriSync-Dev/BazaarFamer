@@ -40,7 +40,7 @@ class SearchForm extends StatelessWidget {
             ),
           ),
         ),
-        Filters(),
+        const Filters(),
       ],
     );
   }

@@ -10,6 +10,7 @@ class MyCartItem extends StatefulWidget {
   final int price;
   final String img;
   MyCartItem({
+    super.key,
     required this.img,
     required this.price,
     required this.prodId,
@@ -37,7 +38,7 @@ class _MyCartItemState extends State<MyCartItem> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Container(
+              SizedBox(
                 height: 110,
                 width: 110,
                 child: Image.asset(

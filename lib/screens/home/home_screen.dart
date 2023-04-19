@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:pirate_hunt/models/Product.dart';
 import 'package:pirate_hunt/screens/cart/cart_screen.dart';
-import 'package:pirate_hunt/screens/details/details_screen.dart';
 import 'package:pirate_hunt/screens/home/components/new_arrival_products2.dart';
-import 'package:pirate_hunt/screens/home/components/product_card.dart';
 import 'package:pirate_hunt/screens/myproducts/my_products.dart';
 import 'package:pirate_hunt/screens/orders/orders_screen.dart';
 import 'package:pirate_hunt/screens/profile/profile_screen.dart';
-import 'package:provider/provider.dart';
 
 // import '/screens/cart/cart_screen.dart';
 import '/constants.dart';
-import '/providers/cart.dart';
 import 'components/categories.dart';
 import 'components/new_arrival_products.dart';
 // import 'components/search_form.dart';
@@ -53,7 +48,6 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final data = Provider.of<Cart>(context);
     return Scaffold(
       appBar: AppBar(
         // centerTitle: true,
