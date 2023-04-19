@@ -82,7 +82,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       ),
                       const SizedBox(width: defaultPadding),
                       Text(
-                        "\$${widget.product.price}",
+                        "Rs ${widget.product.price}",
                         style: Theme.of(context).textTheme.headline6,
                       ),
                     ],
