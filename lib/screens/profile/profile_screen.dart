@@ -175,7 +175,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                           ),
                           Text(
-                            '${loggedInUser.pno}',
+                            '+91-7007854652',
                             style: const TextStyle(
                               fontSize: 16,
                             ),
@@ -196,7 +196,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                           ),
                           Text(
-                            '${loggedInUser.address}',
+                            'Kanpur, UP',
                             style: const TextStyle(
                               fontSize: 16,
                             ),
