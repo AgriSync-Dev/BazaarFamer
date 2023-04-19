@@ -14,6 +14,11 @@ The web and mobile application should provide a user-friendly interface for cust
 
 Local farmer's markets are an important source of fresh and healthy food, but they often lack the convenience and accessibility of online shopping platforms. There is a need for a user-friendly application that allows customers to purchase local products and support local farmers.
 
+## Solution & Presentation 
+
+Solution and Presentation accessible at [Presentation](https://wepik.com/share/0e2dad63-4d05-4b5c-b2cd-f43e96426bfd#rs=link)
+Apk available at [Bazaar App](https://drive.google.com/file/d/1AuHqbFOEPDMWGgcSVAhJfOKDhKlSNma2/view?usp=sharing)
+
 ## Screenshots
 
 <img src="100.jpeg" height="300em" /> | <img src="101.jpeg" height="300em" /> |
