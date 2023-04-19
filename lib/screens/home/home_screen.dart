@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pirate_hunt/models/Product.dart';
 import 'package:pirate_hunt/screens/cart/cart_screen.dart';
+import 'package:pirate_hunt/screens/details/details_screen.dart';
+import 'package:pirate_hunt/screens/home/components/product_card.dart';
 import 'package:pirate_hunt/screens/myproducts/my_products.dart';
 import 'package:pirate_hunt/screens/orders/orders_screen.dart';
 import 'package:pirate_hunt/screens/profile/profile_screen.dart';
@@ -111,7 +114,10 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
                 SectionTitle(title: 'Categories', pressSeeAll: () {}),
                 const Categories(),
                 const NewArrivalProducts(),
-                // const PopularProducts(),
+                const Card(
+                  elevation: 0,
+                  child: Text('Big Offers Incoming'),
+                )
               ],
             ),
           ),
