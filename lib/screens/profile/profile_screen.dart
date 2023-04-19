@@ -166,8 +166,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Text(
+                        children: const [
+                          Text(
                             'Phone No',
                             style: TextStyle(
                               fontSize: 16,
@@ -176,7 +176,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ),
                           Text(
                             '+91-7007854652',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 16,
                             ),
                           ),
@@ -187,8 +187,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Text(
+                        children: const [
+                          Text(
                             'Address',
                             style: TextStyle(
                               fontSize: 16,
@@ -197,7 +197,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ),
                           Text(
                             'Kanpur, UP',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 16,
                             ),
                           ),
@@ -211,6 +211,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           logout(context);
                         },
                         child: const Text('LogOut'),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          // logout(context);
+                        },
+                        child: const Text('Verify Farmer Status'),
                       ),
                     ],
                   ),
