@@ -20,7 +20,7 @@ Local farmer's markets are an important source of fresh and healthy food, but th
 <img src="102.jpeg" height="300em" />  | <img src="103.jpeg" height="300em" />
 
 <img src="104.jpeg" height="300em" /> | <img src="105.jpeg" height="300em" /> |
-<img src="105.jpeg" height="300em" /> | <img src="107.jpeg" height="300em" /> | 
+<img src="106.jpeg" height="300em" /> | <img src="107.jpeg" height="300em" /> | 
 
 <img src="108.jpeg" height="300em" /> | <img src="109.jpeg" height="300em" />
 
