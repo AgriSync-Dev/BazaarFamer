@@ -1,6 +1,22 @@
-# farmer_bazaar
+# Bazaar
 
-A new Flutter project.
+Bazaar is a project developed to provide a common marketplace for the Farmers of India to seel & buy their goods without the involvement of the middlemen.
+
+## Problem Statement
+
+Develop a web and mobile application for a local farmer's market that allows customers to browse products, place orders, and schedule pickup or delivery.
+
+## Description:
+
+The web and mobile application should provide a user-friendly interface for customers to browse and purchase products from a local farmer's market. The application should allow customers to view product information, place orders, and choose pickup or delivery options. The system should be scalable and able to handle large amounts of user data and orders.
+
+## Problem Inspiration:
+
+Local farmer's markets are an important source of fresh and healthy food, but they often lack the convenience and accessibility of online shopping platforms. There is a need for a user-friendly application that allows customers to purchase local products and support local farmers.
+
+## Few Screenshots
+
+
 
 ## Getting Started
 
