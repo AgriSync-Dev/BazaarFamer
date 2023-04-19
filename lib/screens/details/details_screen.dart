@@ -192,7 +192,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
 
                                   FocusScope.of(context).unfocus();
                                   Navigator.of(context)
-                                      .pushNamed(CartScreen.routeName);
+                                      .pushReplacementNamed(CartScreen.routeName);
                                 },
                           style: ElevatedButton.styleFrom(
                               primary: primaryColor,

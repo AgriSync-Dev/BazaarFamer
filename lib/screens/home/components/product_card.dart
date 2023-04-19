@@ -41,6 +41,7 @@ class ProductCard extends StatelessWidget {
               child: Image.asset(
                 image,
                 height: 132,
+                fit: BoxFit.fill,
               ),
             ),
             const SizedBox(height: defaultPadding / 2),

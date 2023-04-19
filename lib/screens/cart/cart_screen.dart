@@ -88,7 +88,8 @@ class CartScreen extends StatelessWidget {
                       onPressed: () {
                         Provider.of<Orders>(context,listen: false).addOrder(myOrders, cartData.totalAmount);
                         Provider.of<Cart>(context,listen: false).emptyCart();
-                        Navigator.of(context).pushReplacementNamed(SecondHomeScreen.routeName);
+                        Navigator.of(context).pop();
+                        Navigator.of(context).popAndPushNamed(SecondHomeScreen.routeName);
                       },
                       child: const Text(
                         'Place order',
