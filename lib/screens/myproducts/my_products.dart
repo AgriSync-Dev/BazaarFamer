@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pirate_hunt/models/Product.dart';
 import 'package:pirate_hunt/screens/myproducts/add_product.dart';
+import 'package:pirate_hunt/screens/myproducts/components/product_card_file.dart';
 
 import '../details/details_screen.dart';
 import '../home/components/product_card.dart';
@@ -32,30 +33,34 @@ class _MyProductScreenState extends State<MyProductScreen> {
       //   //   ),
       //   // ],
       // ),
-      body: GridView.builder(
-        itemCount: demo_product.length,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          mainAxisSpacing: 20,
-        ),
-        itemBuilder: (BuildContext context, int index) {
-          return ProductCard(
-            title: demo_product[index].title,
-            image: demo_product[index].image,
-            price: demo_product[index].price,
-            bgColor: demo_product[index].bgColor,
-            press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      DetailsScreen(product: demo_product[index]),
-                ),
-              );
-            },
-          );
-        },
-      ),
+      body: demo_product.isEmpty
+          ? const Center(
+              child: Text('No Products added Yet!'),
+            )
+          : GridView.builder(
+              itemCount: demo_product.length,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 20,
+              ),
+              itemBuilder: (BuildContext context, int index) {
+                return ProductCardFile(
+                  title: demo_product[index].title,
+                  image: demo_product[index].image,
+                  price: demo_product[index].price,
+                  bgColor: demo_product[index].bgColor,
+                  press: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            DetailsScreen(product: demo_product[index]),
+                      ),
+                    );
+                  },
+                );
+              },
+            ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(

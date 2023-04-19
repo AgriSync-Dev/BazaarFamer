@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:pirate_hunt/models/Product.dart';
 import 'package:pirate_hunt/models/Product.dart';
+import 'package:pirate_hunt/screens/home/home_screen.dart';
 
 import '../../models/Product.dart';
 
@@ -368,7 +369,9 @@ class _AddProductState extends State<AddProduct> {
                       ),
                     );
                     //print(demo_product[demo_product.length - 1].image);
+                    // Navigator.of(context).popUntil((route) => false)
                     Navigator.of(context).pop();
+                    Navigator.of(context).popAndPushNamed(SecondHomeScreen.routeName);
                     //push data to firebase .................................................
                   },
                   child: const Padding(
