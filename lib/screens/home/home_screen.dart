@@ -114,10 +114,10 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
                 SectionTitle(title: 'Categories', pressSeeAll: () {}),
                 const Categories(),
                 const NewArrivalProducts(),
-                const Card(
-                  elevation: 0,
-                  child: Text('Big Offers Incoming'),
-                )
+                // const Card(
+                //   elevation: 0,
+                //   child: Text('Big Offers Incoming'),
+                // )
               ],
             ),
           ),

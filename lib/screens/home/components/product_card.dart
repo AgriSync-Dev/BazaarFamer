@@ -32,18 +32,17 @@ class ProductCard extends StatelessWidget {
         child: Column(
           children: [
             Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: bgColor,
-                  borderRadius: const BorderRadius.all(
-                      Radius.circular(defaultBorderRadius)),
-                ),
-                child: Image.file(File(image))
-                /*Image.asset(
-                      image,
-                      height: 132,
-                    ),*/
-                ),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: bgColor,
+                borderRadius: const BorderRadius.all(
+                    Radius.circular(defaultBorderRadius)),
+              ),
+              child: Image.asset(
+                image,
+                height: 132,
+              ),
+            ),
             const SizedBox(height: defaultPadding / 2),
             Row(
               children: [
@@ -55,7 +54,7 @@ class ProductCard extends StatelessWidget {
                 ),
                 const SizedBox(width: defaultPadding / 4),
                 Text(
-                  "\$$price",
+                  "\Rs $price",
                   style: Theme.of(context).textTheme.subtitle2,
                 ),
               ],

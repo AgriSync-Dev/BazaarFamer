@@ -27,7 +27,7 @@ void addProduct(Product newProd) {
 List<Product> home_product = [
   Product(
     id: '1',
-    image: "assets/images/20.jpg",
+    image: "assets/20.jpeg",
     title: "Mango",
     price: 70,
     description: 'vegetables',
@@ -37,7 +37,7 @@ List<Product> home_product = [
   ),
   Product(
     id: '2',
-    image: "assets/images/21.jpg",
+    image: "assets/21.jpeg",
     title: "Watermelon",
     price: 99,
     description: 'vegetables',
@@ -46,7 +46,7 @@ List<Product> home_product = [
   ),
   Product(
     id: '3',
-    image: "assets/images/22.jpg",
+    image: "assets/22.jpeg",
     title: "Tomato",
     price: 80,
     description: 'vegetables',
@@ -56,7 +56,7 @@ List<Product> home_product = [
   ),
   Product(
     id: '4',
-    image: "assets/images/23.jpg",
+    image: "assets/23.jpeg",
     title: "Potato",
     price: 30,
     description: 'Vegetables',
