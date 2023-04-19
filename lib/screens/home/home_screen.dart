@@ -117,7 +117,7 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
                 // const Card(
                 //   elevation: 0,
                 //   child: Text('Big Offers Incoming'),
-                // )
+                // ),
               ],
             ),
           ),
