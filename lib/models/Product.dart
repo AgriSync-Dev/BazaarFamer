@@ -20,6 +20,10 @@ class Product {
   });
 }
 
+void addProduct(Product newProd) {
+  demo_product.add(newProd);
+}
+
 List<Product> demo_product = [
   Product(
     id: '1',
