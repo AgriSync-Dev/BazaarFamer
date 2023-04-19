@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:pirate_hunt/models/Product.dart';
@@ -18,6 +19,14 @@ class _AddProductState extends State<AddProduct> {
   final TextEditingController _title = TextEditingController();
   final TextEditingController _price = TextEditingController();
   final TextEditingController _description = TextEditingController();
+  final TextEditingController _unit = TextEditingController();
+  final List<String> items = [
+    'Vegetables',
+    'Fruits',
+    'Grains',
+    'Dairy',
+  ];
+  String? selectedValue;
 
   @override
   void initState() {
@@ -31,6 +40,7 @@ class _AddProductState extends State<AddProduct> {
     _title.dispose();
     _price.dispose();
     _description.dispose();
+    _unit.dispose();
   }
 
   @override
@@ -53,6 +63,30 @@ class _AddProductState extends State<AddProduct> {
         prefixIcon: const Icon(Icons.person),
         contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         hintText: "Name",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
+    );
+
+    final unitField = TextFormField(
+      autofocus: false,
+      controller: _unit,
+      validator: (value) {
+        if (value!.isEmpty) {
+          return ("Please enter the product unit!");
+        }
+        return null;
+      },
+      keyboardType: TextInputType.name,
+      onSaved: (val) {
+        _unit.text = val!;
+      },
+      textInputAction: TextInputAction.next,
+      decoration: InputDecoration(
+        prefixIcon: const Icon(Icons.ac_unit),
+        contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+        hintText: "Unit",
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
         ),
@@ -221,6 +255,102 @@ class _AddProductState extends State<AddProduct> {
                   height: 20,
                 ),
                 priceField,
+                const SizedBox(
+                  height: 20,
+                ),
+                unitField,
+                const SizedBox(
+                  height: 20,
+                ),
+                DropdownButtonHideUnderline(
+                  child: DropdownButton2(
+                    isExpanded: true,
+                    hint: Row(
+                      children: const [
+                        Icon(
+                          Icons.list,
+                          size: 16,
+                          color: Colors.white,
+                        ),
+                        SizedBox(
+                          width: 4,
+                        ),
+                        Expanded(
+                          child: Text(
+                            'Select Item',
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ],
+                    ),
+                    items: items
+                        .map((item) => DropdownMenuItem<String>(
+                              value: item,
+                              child: Text(
+                                item,
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ))
+                        .toList(),
+                    value: selectedValue,
+                    onChanged: (value) {
+                      setState(() {
+                        selectedValue = value as String;
+                      });
+                    },
+                    buttonStyleData: ButtonStyleData(
+                      height: 50,
+                      width: 160,
+                      padding: const EdgeInsets.only(left: 14, right: 14),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(14),
+                        border: Border.all(
+                          color: Colors.black26,
+                        ),
+                        color: Colors.blueAccent,
+                      ),
+                      elevation: 2,
+                    ),
+                    iconStyleData: const IconStyleData(
+                      icon: Icon(
+                        Icons.arrow_downward_outlined,
+                      ),
+                      iconSize: 18,
+                      iconEnabledColor: Colors.white,
+                      iconDisabledColor: Colors.grey,
+                    ),
+                    dropdownStyleData: DropdownStyleData(
+                      maxHeight: 200,
+                      width: 200,
+                      padding: null,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(14),
+                        color: Colors.blueAccent,
+                      ),
+                      elevation: 8,
+                      offset: const Offset(-20, 0),
+                      scrollbarTheme: ScrollbarThemeData(
+                        radius: const Radius.circular(40),
+                        thickness: MaterialStateProperty.all<double>(6),
+                        thumbVisibility: MaterialStateProperty.all<bool>(true),
+                      ),
+                    ),
+                    menuItemStyleData: const MenuItemStyleData(
+                      height: 40,
+                      padding: EdgeInsets.only(left: 14, right: 14),
+                    ),
+                  ),
+                ),
                 const SizedBox(
                   height: 20,
                 ),
