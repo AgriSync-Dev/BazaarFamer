@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
@@ -55,7 +53,7 @@ class ProductCard extends StatelessWidget {
                 ),
                 const SizedBox(width: defaultPadding / 4),
                 Text(
-                  "\Rs $price",
+                  "Rs $price",
                   style: Theme.of(context).textTheme.subtitle2,
                 ),
               ],

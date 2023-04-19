@@ -23,7 +23,7 @@ class PopularProducts extends StatelessWidget {
             pressSeeAll: () {},
           ),
         ),
-        Container(
+        SizedBox(
           height: 250,
           child: GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import './cart.dart';
 //import 'package:http/http.dart' as http;
-import 'dart:convert';
-
-import 'package:pirate_hunt/providers/cart.dart';
 
 class OrderItem {
   final String id;
@@ -21,7 +18,7 @@ class OrderItem {
 
 class Orders with ChangeNotifier {
   // var timeStamp=DateTime.now();
-  late List<OrderItem> _orders = [
+  late final List<OrderItem> _orders = [
     // OrderItem(
     //   amount: 12.67,
     //   dateTime: DateTime.now(),

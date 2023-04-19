@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
 import '/providers/cart.dart';
@@ -88,9 +87,9 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     ],
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: defaultPadding),
-                    child: Text(widget.product.description)
-                  ),
+                      padding:
+                          const EdgeInsets.symmetric(vertical: defaultPadding),
+                      child: Text(widget.product.description)),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -191,8 +190,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                           _quantity);
 
                                   FocusScope.of(context).unfocus();
-                                  Navigator.of(context)
-                                      .pushReplacementNamed(CartScreen.routeName);
+                                  Navigator.of(context).pushReplacementNamed(
+                                      CartScreen.routeName);
                                 },
                           style: ElevatedButton.styleFrom(
                               primary: primaryColor,
