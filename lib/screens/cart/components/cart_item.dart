@@ -30,7 +30,7 @@ class _MyCartItemState extends State<MyCartItem> {
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
-            color: Colors.pink[100],
+            color: Colors.blue[100],
           ),
           width: double.infinity,
           height: 140,

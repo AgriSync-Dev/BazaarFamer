@@ -78,13 +78,13 @@ class CartScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Total: \$${cartData.totalAmount}',
+                      'Total: Rs ${cartData.totalAmount}',
                       style: const TextStyle(
                         color: Colors.black,
                         fontSize: 16,
                       ),
                     ),
-                    OutlinedButton(
+                    ElevatedButton(
                       onPressed: () {
                         Provider.of<Orders>(context,listen: false).addOrder(myOrders, cartData.totalAmount);
                         Provider.of<Cart>(context,listen: false).emptyCart();
@@ -93,7 +93,7 @@ class CartScreen extends StatelessWidget {
                       },
                       child: const Text(
                         'Place order',
-                        style: TextStyle(color: primaryColor),
+                        style: TextStyle(color: Colors.white),
                       ),
                     ),
                   ],
