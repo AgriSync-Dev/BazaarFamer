@@ -66,4 +66,46 @@ List<Product> home_product = [
   ),
 ];
 
+List<Product> home_product1 = [
+  Product(
+    id: '3',
+    image: "assets/22.jpeg",
+    title: "Tomato",
+    price: 80,
+    description: 'Ahh is it a fruit or a vegetable!',
+    bgColor: const Color(0xFFF8FEFB),
+    unit: '1 kg',
+    category: 'Vegetables',
+  ),
+  Product(
+    id: '4',
+    image: "assets/23.jpeg",
+    title: "Potato",
+    price: 30,
+    description: 'King of vegetables, Can go with anything',
+    bgColor: const Color(0xFFEEEEED),
+    unit: '1 kg',
+    category: 'Vegetables',
+  ),
+  Product(
+    id: '1',
+    image: "assets/20.jpeg",
+    title: "Mango",
+    price: 70,
+    description: 'King of Fruits',
+    bgColor: const Color(0xFFFEFBF9),
+    unit: '1 kg',
+    category: 'Fruits',
+  ),
+  Product(
+    id: '2',
+    image: "assets/21.jpeg",
+    title: "Watermelon",
+    price: 99,
+    description: 'Juicy seasonal fruit',
+    unit: '1 kg',
+    category: 'Fruits',
+  ),
+];
+
 List<Product> demo_product = [];

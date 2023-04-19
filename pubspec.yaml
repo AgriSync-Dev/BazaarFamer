@@ -40,7 +40,7 @@ dependencies:
   http: ^0.13.5
   image_picker: ^0.8.7+3
   provider: ^6.0.5
-  intl: ^0.18.1
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -64,7 +64,7 @@ flutter:
     - assets/icons/
     - assets/images/
     - assets/11.jpeg
-    - assets/12.jpeg
+    - assets/12.png
     - assets/13.jpeg
     - assets/14.jpeg
     - assets/20.jpeg

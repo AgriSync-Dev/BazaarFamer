@@ -10,7 +10,7 @@ List<Category> demo_categories = [
     title: "Vegetables",
   ),
   Category(
-    icon: "assets/12.jpeg",
+    icon: "assets/12.png",
     title: "Fruits",
   ),
   Category(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pirate_hunt/models/Product.dart';
 import 'package:pirate_hunt/screens/cart/cart_screen.dart';
 import 'package:pirate_hunt/screens/details/details_screen.dart';
+import 'package:pirate_hunt/screens/home/components/new_arrival_products2.dart';
 import 'package:pirate_hunt/screens/home/components/product_card.dart';
 import 'package:pirate_hunt/screens/myproducts/my_products.dart';
 import 'package:pirate_hunt/screens/orders/orders_screen.dart';
@@ -58,7 +59,7 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
         // centerTitle: true,
         elevation: 0,
         title: const Text(
-          "Farmer's Market",
+          "Bazaar",
           style: TextStyle(color: Colors.white),
         ),
         actions: [
@@ -114,6 +115,7 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
                 SectionTitle(title: 'Categories', pressSeeAll: () {}),
                 const Categories(),
                 const NewArrivalProducts(),
+                const NewArrivalProducts2(),
                 // const Card(
                 //   elevation: 0,
                 //   child: Text('Big Offers Incoming'),

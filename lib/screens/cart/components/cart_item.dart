@@ -63,7 +63,7 @@ class _MyCartItemState extends State<MyCartItem> {
                     height: 7,
                   ),
                   Text(
-                    'Price: \$${widget.price}',
+                    'Price: Rs ${widget.price}',
                     style: const TextStyle(fontWeight: FontWeight.w500),
                   ),
                   const SizedBox(
