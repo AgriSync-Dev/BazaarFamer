@@ -67,7 +67,7 @@ class Cart with ChangeNotifier {
         ),
       );
     } else {
-      Product p = demo_product.firstWhere((element) => element.id == productId);
+      Product p = home_product.firstWhere((element) => element.id == productId);
       _items.putIfAbsent(
         productId,
         () => CartItem(
