@@ -1,11 +1,12 @@
+
 class UserModel {
   String? uid;
   String? email;
   String? userName;
-  String? pno = "N/A";
+  String? pno="N/A";
   String? address = "N/A";
 
-  UserModel({this.uid, this.email, this.userName, this.pno, this.address});
+  UserModel({this.uid, this.email, this.userName, this.pno,this.address});
 
   factory UserModel.fromMap(map) {
     return UserModel(

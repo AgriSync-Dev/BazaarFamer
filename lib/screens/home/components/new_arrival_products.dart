@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pirate_hunt/screens/all_products/all_products_screen.dart';
+import 'package:pirate_hunt/screens/myproducts/my_products.dart';
 import '../../details/details_screen.dart';
 import '/models/Product.dart';
 // import '/screens/details/details_screen.dart';
@@ -12,7 +13,7 @@ class NewArrivalProducts extends StatelessWidget {
   const NewArrivalProducts({
     Key? key,
   }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return Column(
