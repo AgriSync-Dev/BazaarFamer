@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Product {
-  final String id;
+  final String id, description;
   final String image, title;
   final int price;
   final Color bgColor;
@@ -11,6 +11,7 @@ class Product {
     required this.image,
     required this.title,
     required this.price,
+    this.description = '',
     this.bgColor = const Color(0xFFEFEFF2),
   });
 }

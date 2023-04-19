@@ -65,7 +65,11 @@ class _MyProductScreenState extends State<MyProductScreen> {
             ),
           );
         },
-        child: const Icon(Icons.add),
+        backgroundColor: Colors.blueAccent,
+        child: const Icon(
+          Icons.add,
+          size: 30,
+        ),
       ),
     );
   }
