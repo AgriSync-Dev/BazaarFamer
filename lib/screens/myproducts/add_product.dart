@@ -4,6 +4,9 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:pirate_hunt/models/Product.dart';
+import 'package:pirate_hunt/models/Product.dart';
+
+import '../../models/Product.dart';
 
 class AddProduct extends StatefulWidget {
   const AddProduct({super.key});
@@ -13,7 +16,6 @@ class AddProduct extends StatefulWidget {
 }
 
 class _AddProductState extends State<AddProduct> {
-  late List<Product> temp;
   final _formKey = GlobalKey<FormState>();
   File? imageFile;
   final TextEditingController _title = TextEditingController();
@@ -26,13 +28,7 @@ class _AddProductState extends State<AddProduct> {
     'Grains',
     'Dairy',
   ];
-  String? selectedValue;
-
-  @override
-  void initState() {
-    temp = [];
-    super.initState();
-  }
+  String selectedValue = 'Vegetables';
 
   @override
   void dispose() {
@@ -360,18 +356,18 @@ class _AddProductState extends State<AddProduct> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    temp.add(
+                    demo_product.add(
                       Product(
-                        id: '123',
-                        //image: imageFile,........................................
+                        id: (demo_product.length + 1).toString(),
                         image: imageFile!.path,
                         title: _title.text,
                         price: int.parse(_price.text),
                         description: _description.text,
-                        unit: '1 kg',
-                        category: 'vegetable',
+                        unit: _unit.text,
+                        category: selectedValue,
                       ),
                     );
+                    print(demo_product);
                     //push data to firebase .................................................
                   },
                   child: const Padding(
