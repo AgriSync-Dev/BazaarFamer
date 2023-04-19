@@ -24,10 +24,10 @@ void addProduct(Product newProd) {
   demo_product.add(newProd);
 }
 
-List<Product> demo_product = [
+List<Product> home_product = [
   Product(
     id: '1',
-    image: "assets/images/product_0.png",
+    image: "assets/images/20.jpg",
     title: "Mango",
     price: 70,
     description: 'vegetables',
@@ -37,7 +37,7 @@ List<Product> demo_product = [
   ),
   Product(
     id: '2',
-    image: "assets/images/product_1.png",
+    image: "assets/images/21.jpg",
     title: "Watermelon",
     price: 99,
     description: 'vegetables',
@@ -46,7 +46,7 @@ List<Product> demo_product = [
   ),
   Product(
     id: '3',
-    image: "assets/images/product_2.png",
+    image: "assets/images/22.jpg",
     title: "Tomato",
     price: 80,
     description: 'vegetables',
@@ -56,7 +56,7 @@ List<Product> demo_product = [
   ),
   Product(
     id: '4',
-    image: "assets/images/product_3.png",
+    image: "assets/images/23.jpg",
     title: "Potato",
     price: 30,
     description: 'Vegetables',
@@ -65,3 +65,5 @@ List<Product> demo_product = [
     category: 'Vegetables',
   ),
 ];
+
+List<Product> demo_product = [];
