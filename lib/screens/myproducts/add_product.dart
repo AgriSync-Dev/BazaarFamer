@@ -42,12 +42,19 @@ class _AddProductState extends State<AddProduct> {
 
   @override
   Widget build(BuildContext context) {
+    bool isNumeric(String s) {
+      if (s == null) {
+        return false;
+      }
+      return double.tryParse(s) != null;
+    }
+
     final nameField = TextFormField(
       autofocus: false,
       controller: _title,
       validator: (value) {
-        if (value!.isEmpty) {
-          return ("Please enter your name!");
+        if (value!.isEmpty || isNumeric(value)) {
+          return ("Please enter a valid Product name!");
         }
         return null;
       },
@@ -119,8 +126,8 @@ class _AddProductState extends State<AddProduct> {
       autofocus: false,
       controller: _price,
       validator: (value) {
-        if (value!.isEmpty) {
-          return ("Please enter price of product!");
+        if (value!.isEmpty || int.parse(value) <= 0) {
+          return ("Please enter a valid price of product!");
         }
         return null;
       },
@@ -357,21 +364,25 @@ class _AddProductState extends State<AddProduct> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    demo_product.add(
-                      Product(
-                        id: (demo_product.length + 1).toString(),
-                        image: imageFile!.path,
-                        title: _title.text,
-                        price: int.parse(_price.text),
-                        description: _description.text,
-                        unit: _unit.text,
-                        category: selectedValue,
-                      ),
-                    );
-                    //print(demo_product[demo_product.length - 1].image);
-                    // Navigator.of(context).popUntil((route) => false)
-                    Navigator.of(context).pop();
-                    Navigator.of(context).popAndPushNamed(SecondHomeScreen.routeName);
+                    if (_formKey.currentState!.validate() && imageFile != null) {
+                      demo_product.add(
+                        Product(
+                          id: (demo_product.length + 1).toString(),
+                          image: imageFile!.path,
+                          title: _title.text,
+                          price: int.parse(_price.text),
+                          description: _description.text,
+                          unit: _unit.text,
+                          category: selectedValue,
+                        ),
+                      );
+                      //print(demo_product[demo_product.length - 1].image);
+                      // Navigator.of(context).popUntil((route) => false)
+                      Navigator.of(context).pop();
+                      Navigator.of(context)
+                          .popAndPushNamed(SecondHomeScreen.routeName);
+                    }
+
                     //push data to firebase .................................................
                   },
                   child: const Padding(
