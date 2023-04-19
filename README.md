@@ -2,6 +2,9 @@
 
 Bazaar is a project developed to provide a common marketplace for the Farmers of India to seel & buy their goods without the involvement of the middlemen.
 
+## Team Name : Nexus ( 1003 )
+Members : Amartya Yadav, Barmendu Chakraborty, Ayush Uttam
+
 ## Problem Statement
 
 Develop a web and mobile application for a local farmer's market that allows customers to browse products, place orders, and schedule pickup or delivery.
@@ -16,7 +19,8 @@ Local farmer's markets are an important source of fresh and healthy food, but th
 
 ## Solution & Presentation 
 
-Solution and Presentation accessible at [Presentation](https://wepik.com/share/0e2dad63-4d05-4b5c-b2cd-f43e96426bfd#rs=link)
+Solution and Presentation accessible at [Presentation](https://drive.google.com/file/d/1qPT-PRQDRr9KZ9LzHKtBO0B2Z4sl1tLy/view?usp=drivesdk)
+
 Apk available at [Bazaar App](https://drive.google.com/file/d/1AuHqbFOEPDMWGgcSVAhJfOKDhKlSNma2/view?usp=sharing)
 
 ## Screenshots
