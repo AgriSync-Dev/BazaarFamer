@@ -234,10 +234,12 @@ class _AddProductState extends State<AddProduct> {
                       Product(
                         id: '123',
                         //image: imageFile,........................................
-                        image: '1234',
+                        image: imageFile!.path,
                         title: _title.text,
                         price: int.parse(_price.text),
                         description: _description.text,
+                        unit: '1 kg',
+                        category: 'vegetable',
                       ),
                     );
                     //push data to firebase .................................................

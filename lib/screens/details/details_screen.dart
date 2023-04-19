@@ -87,17 +87,15 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       ),
                     ],
                   ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(vertical: defaultPadding),
-                    child: Text(
-                      "A Henley shirt is a collarless pullover shirt, by a round neckline and a placket about 3 to 5 inches (8 to 13 cm) long and usually having 2–5 buttons.",
-                    ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: defaultPadding),
+                    child: Text(widget.product.description)
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Colors",
+                        "Unit",
                         style: Theme.of(context).textTheme.subtitle2,
                       ),
                       Text(
@@ -110,7 +108,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const ChoiceColors(),
+                      // const ChoiceColors(),
+                      Text(widget.product.unit),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [

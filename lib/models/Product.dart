@@ -5,14 +5,18 @@ class Product {
   final String image, title;
   final int price;
   final Color bgColor;
+  final String unit;
+  final String category;
 
   Product({
     required this.id,
     required this.image,
     required this.title,
     required this.price,
-    this.description = '',
+    required this.description,
     this.bgColor = const Color(0xFFEFEFF2),
+    required this.unit,
+    required this.category,
   });
 }
 
@@ -22,26 +26,38 @@ List<Product> demo_product = [
     image: "assets/images/product_0.png",
     title: "Long Sleeve Shirts",
     price: 165,
+    description: 'vegetables',
     bgColor: const Color(0xFFFEFBF9),
+    unit: '1 kg',
+    category: 'vegetables',
   ),
   Product(
     id: '2',
     image: "assets/images/product_1.png",
     title: "Casual Henley Shirts",
     price: 99,
+    description: 'vegetables',
+    unit: '1 kg',
+    category: 'vegetables',
   ),
   Product(
     id: '3',
     image: "assets/images/product_2.png",
     title: "Curved Hem Shirts",
     price: 180,
+    description: 'vegetables',
     bgColor: const Color(0xFFF8FEFB),
+    unit: '1 kg',
+    category: 'vegetables',
   ),
   Product(
     id: '4',
     image: "assets/images/product_3.png",
     title: "Casual Nolin",
     price: 149,
+    description: 'vegetables',
     bgColor: const Color(0xFFEEEEED),
+    unit: '1 kg',
+    category: 'vegetables',
   ),
 ];
