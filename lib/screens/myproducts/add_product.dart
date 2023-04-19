@@ -367,7 +367,8 @@ class _AddProductState extends State<AddProduct> {
                         category: selectedValue,
                       ),
                     );
-                    print(demo_product);
+                    //print(demo_product[demo_product.length - 1].image);
+                    Navigator.of(context).pop();
                     //push data to firebase .................................................
                   },
                   child: const Padding(
