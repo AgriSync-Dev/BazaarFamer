@@ -1,6 +1,6 @@
 # Bazaar
 
-Bazaar is a project developed to provide a common marketplace for the Farmers of India to seel & buy their goods without the involvement of the middlemen.
+Bazaar is a project developed to provide a common marketplace for the Farmers of India to sell & buy their goods without the involvement of the middlemen.
 
 ## Team Name : Nexus ( 1003 )
 Members : Amartya Yadav, Barmendu Chakraborty, Ayush Uttam
